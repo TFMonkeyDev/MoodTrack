@@ -1,43 +1,92 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>Politique de confidentialité – Mon Application</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Politique de confidentialité — MoodTrack</title>
+  <style>
+    :root{
+      --bg:#f7f7f6;
+      --card:#ffffff;
+      --muted:#6b6b6b;
+      --accent:#5B8DEF;
+      --border:#e6e2db;
+      --maxw:780px;
+      font-family: Inter, Roboto, "Helvetica Neue", Arial, sans-serif;
+      color:#222;
+    }
+    body{background:var(--bg);margin:0;padding:24px;display:flex;justify-content:center}
+    .wrap{width:100%;max-width:var(--maxw)}
+    .card{background:var(--card);border-radius:14px;padding:22px;border:1px solid var(--border);box-shadow:0 8px 24px rgba(0,0,0,0.04)}
+    h1{margin:0 0 8px;font-size:20px;color:var(--accent)}
+    h2{font-size:16px;margin:18px 0 8px}
+    p{margin:8px 0;color:var(--muted);line-height:1.5}
+    ul{margin:8px 0 8px 20px;color:var(--muted)}
+    code{background:#f2f2f2;padding:2px 6px;border-radius:6px;font-size:90%}
+    .meta{font-size:13px;color:#8a8a8a;margin-top:14px}
+    a{color:var(--accent);text-decoration:none}
+    footer{margin-top:18px;font-size:12px;color:#9b9b9b}
+  </style>
 </head>
-<body style="font-family: Arial, sans-serif; line-height:1.6; max-width:800px; margin:auto; padding:20px;">
-    <h1>Politique de confidentialité</h1>
-    <p>Dernière mise à jour : [Date]</p>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <h1>Politique de confidentialité — MoodTrack</h1>
+      <p>Dernière mise à jour : <strong>2025-10-21</strong></p>
 
-    <h2>1. Introduction</h2>
-    <p>Votre vie privée est importante pour nous. Cette politique de confidentialité décrit comment <strong>[Nom de l’application]</strong> (“nous”, “notre”, “nos”) collecte, utilise et partage les données des utilisateurs lorsque vous utilisez notre application.</p>
+      <h2>1. Présentation</h2>
+      <p>Cette application mobile ("MoodTrack") permet de suivre des habitudes, l’humeur et un journal personnel. Cette politique explique quelles données sont collectées, comment elles sont utilisées et les choix qui s’offrent à vous.</p>
 
-    <h2>2. Données collectées et finalités</h2>
-    <p>Nous pouvons collecter les éléments suivants : données techniques (type d’appareil, système d’exploitation), identifiants publicitaires, données de localisation approximative, etc., afin de :</p>
-    <ul>
-        <li>Afficher des annonces personnalisées ou non personnalisées via nos partenaires (ex : annonces via AdMob) ;</li>
-        <li>Améliorer l’expérience utilisateur, analyser les performances de l’application ;</li>
-        <li>Respecter nos obligations légales.</li>
-    </ul>
+      <h2>2. Données stockées localement</h2>
+      <p>Les données suivantes sont stockées localement sur l’appareil :</p>
+      <ul>
+        <li>Liste d’habitudes (nom, activation, rappels)</li>
+        <li>Journaux quotidiens (checks d’habitudes) et entrées d’humeur</li>
+        <li>Notes / journal</li>
+        <li>Paramètres (thème, préférences, état premium)</li>
+      </ul>
+      <p>Le stockage se fait via SQLite et SharedPreferences. Aucune de ces données n’est envoyée au serveur par défaut.</p>
 
-    <h2>3. Consentement & annonces personnalisées</h2>
-    <p>Pour les utilisateurs situés dans l’Espace Économique Européen (EEE), nous utilisons le SDK User Messaging Platform (UMP) pour recueillir votre consentement avant de charger les annonces personnalisées. Si vous refusez, seules des annonces non personnalisées seront affichées.</p>
+      <h2>3. Publicité et consentement</h2>
+      <p>L’application utilise Google Mobile Ads (AdMob) pour afficher des bannières et interstitiels. Pour les utilisateurs de l'EEE, un formulaire de consentement (UMP) est utilisé afin de demander l’autorisation pour la publicité personnalisée. Si vous refusez, seules des annonces non personnalisées peuvent être affichées.</p>
+      <p>Identifiants publicitaires et configuration : <code>com.google.android.gms:play-services-ads</code> et UMP.</p>
 
-    <h2>4. Partage des données</h2>
-    <p>Nous ne vendons pas vos données. Nous pouvons partager certaines données avec nos partenaires publicitaires, mais uniquement dans le respect de vos choix (personnalisées vs non personnalisées).</p>
+      <h2>4. Achats intégrés</h2>
+      <p>Les achats d'abonnement et d’option "no ads" sont gérés via le magasin (Google Play / App Store) avec le plugin in_app_purchase. Les informations d’achat (reçus) sont traitées par le Store ; l’application enregistre localement l’état premium pour débloquer les fonctionnalités.</p>
 
-    <h2>5. Vos droits</h2>
-    <p>Vous pouvez à tout moment retirer ou modifier votre consentement via les paramètres de l’application ou en nous contactant à <a href="mailto:contact@tonapp.com">contact@tonapp.com</a>. Vous avez également le droit d’accéder à vos données, de les rectifier ou de demander leur effacement.</p>
+      <h2>5. Données tierces et analytics</h2>
+      <p>Actuellement l’application n’envoie pas de données d’usage à un serveur externe pour de l’analytics. Les SDK tiers (AdMob, UMP, IAP) peuvent collecter des informations nécessaires au fonctionnement (identifiants d’appareil pour la diffusion d’annonces, état d’achat). Consultez les politiques de ces services pour plus de détails.</p>
 
-    <h2>6. Sécurité</h2>
-    <p>Nous prenons des mesures raisonnables pour protéger vos données, mais aucun système n’est totalement infaillible.</p>
+      <h2>6. Partage et export</h2>
+      <p>Vous pouvez exporter vos données (backup JSON/CSV) et les partager manuellement via l’interface de l’app. Ces fichiers contiennent les données stockées localement. Le partage est effectué par l’appareil (share sheet) et non transmis automatiquement à des services tiers par l’application elle‑même.</p>
 
-    <h2>7. Modifications</h2>
-    <p>Nous pouvons mettre à jour cette politique périodiquement. Nous vous informerons des modifications via l’application ou par une mise à jour visible de la date.</p>
+      <h2>7. Sécurité</h2>
+      <p>Les données restent sur votre appareil sauf si vous choisissez de les exporter ou d’utiliser un service tiers externe. Aucune mesure de chiffrement avancée n’est appliquée par défaut au contenu des fichiers locaux ; protégez l’accès physique à votre appareil.</p>
 
-    <h2>8. Contact</h2>
-    <p>Si vous avez des questions ou des plaintes concernant cette politique, veuillez nous contacter à : <br />
-    <strong>[Adresse ou email]</strong></p>
+      <h2>8. Conservation</h2>
+      <p>Les données sont conservées indéfiniment sur l’appareil jusqu’à votre suppression ou jusqu’à la réinitialisation de l’application. Les backups exportés restent sous votre responsabilité.</p>
 
+      <h2>9. Vos droits</h2>
+      <p>Vous pouvez : </p>
+      <ul>
+        <li>Supprimer vos données en désinstallant l’application ou via l’option d’effacement si fournie.</li>
+        <li>Restaurer des achats via le bouton "Restaurer" dans les paramètres si vous changez d’appareil.</li>
+      </ul>
+
+      <h2>10. Contact</h2>
+      <p>Pour toute question au sujet de cette politique ou pour demander la suppression des données, contactez : <a href="mailto:contact@exemple.com">contact@exemple.com</a> (remplacez par votre adresse).</p>
+
+      <h2>11. Modifications</h2>
+      <p>Nous pouvons mettre à jour cette politique. La date de "Dernière mise à jour" en tête du document indique la version active. Nous recommandons de vérifier cette page avant d’utiliser l’application après une mise à jour.</p>
+
+      <div class="meta">
+        Remplacez les champs entre crochets et l’adresse de contact par vos informations réelles avant publication. Pour une conformité complète (GDPR, CCPA), envisagez une revue légale adaptée.
+      </div>
+
+      <footer>
+        MoodTrack — Politique de confidentialité
+      </footer>
+    </div>
+  </div>
 </body>
 </html>
